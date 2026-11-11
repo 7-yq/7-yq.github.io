@@ -1,12 +1,16 @@
 :root {
-  --bg: #FFFDF7;
+  /* Leafy Lake palette; link blue is slightly darkened for text contrast. */
+  --bg: #f7fcfe;
   --paper: #ffffff;
-  --text: #202124;
-  --muted: #666a70;
-  --line: #dedede;
-  --header-cream: #FFFAE6;
-  --link: #1f4f82;
-  --link-hover: #12395f;
+  --text: #000000;
+  --muted: #595857;
+  --line: #c1e4e9;
+  --header-bg: #aacf53;
+  --accent: #007b43;
+  --nav-active: #192f60;
+  --link: #0078b7;
+  --link-hover: #000000;
+  --link-hover-bg: #89c3eb;
   --max: 940px;
 }
 
@@ -23,14 +27,16 @@ body {
 }
 
 a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 0.14em; }
-a:hover, a:focus { color: var(--link-hover); }
+a:hover, a:focus-visible { color: var(--link-hover); background-color: var(--link-hover-bg); border-radius: .4em; }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
+::selection { background: #007bbb; color: #ffffff; }
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: var(--header-cream);
-  border-bottom: 1px solid #eadfae;
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--accent);
 }
 .header-inner {
   max-width: var(--max);
@@ -43,7 +49,7 @@ a:hover, a:focus { color: var(--link-hover); }
 }
 .site-title {
   flex: 0 0 auto;
-  color: #242424;
+  color: var(--nav-active);
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1.42rem;
   font-weight: 600;
@@ -51,7 +57,7 @@ a:hover, a:focus { color: var(--link-hover); }
   text-decoration: none;
   white-space: nowrap;
 }
-.site-title:hover, .site-title:focus { color: #000; }
+.site-title:hover, .site-title:focus { color: var(--text); }
 nav {
   width: auto;
   display: flex;
@@ -62,9 +68,9 @@ nav {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: .87rem;
 }
-nav a { text-decoration: none; color: #242424; }
-nav a:hover, nav a:focus { color: #000; }
-nav a[aria-current="page"] { color: #000; font-weight: 700; }
+nav a { text-decoration: none; color: var(--text); }
+nav a:hover, nav a:focus { color: var(--nav-active); }
+nav a[aria-current="page"] { color: var(--nav-active); font-weight: 700; }
 
 main {
   max-width: var(--max);
@@ -72,7 +78,7 @@ main {
   padding: 2.4rem 1.25rem 3.2rem;
 }
 
-h1, h2, h3 { line-height: 1.24; font-weight: 600; }
+h1, h2, h3 { color: var(--accent); line-height: 1.24; font-weight: 600; }
 h1 { font-size: 2rem; margin: 0 0 1.2rem; }
 h2 { font-size: 1.35rem; margin: 2.25rem 0 .8rem; border-bottom: 1px solid var(--line); padding-bottom: .28rem; }
 h3 { font-size: 1.08rem; margin: 1.5rem 0 .35rem; }
@@ -101,8 +107,8 @@ main p {
   max-width: 205px;
   height: auto;
   border-radius: 3px;
-  border: 1px solid #d8d8d8;
-  background: #eee;
+  border: 1px solid var(--line);
+  background: #eaf4fc;
 }
 .profile-lower {
   margin-top: 1.15rem;
@@ -115,7 +121,7 @@ main p {
   font-size: .92rem;
 }
 .contact span { white-space: nowrap; }
-.sep { margin: 0 .45rem; color: #a2a2a2; }
+.sep { margin: 0 .45rem; color: var(--muted); }
 
 ol.entries, ul.entries { padding-left: 1.45rem; }
 .entries li { margin: 0 0 1rem; padding-left: .15rem; }
