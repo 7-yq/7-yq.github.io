@@ -1,16 +1,16 @@
 :root {
-  /* Leafy Lake palette; link blue is slightly darkened for text contrast. */
-  --bg: #f7fcfe;
+  /* Custom palette based on Leafy Lake; link blue is darkened for text contrast. */
+  --bg: #f2fdff;
   --paper: #ffffff;
   --text: #000000;
   --muted: #595857;
   --line: #c1e4e9;
-  --header-bg: #aacf53;
-  --accent: #007b43;
+  --header-bg: #ffdd00;
+  --accent: #194676;
   --nav-active: #192f60;
   --link: #0078b7;
   --link-hover: #000000;
-  --link-hover-bg: #89c3eb;
+  --link-hover-bg: #ffff00;
   --max: 940px;
 }
 
@@ -49,7 +49,7 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
 }
 .site-title {
   flex: 0 0 auto;
-  color: var(--nav-active);
+  color: var(--accent);
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1.42rem;
   font-weight: 600;
@@ -106,7 +106,7 @@ main p {
   width: 100%;
   max-width: 205px;
   height: auto;
-  border-radius: 3px;
+  border-radius: 10px;
   border: 1px solid var(--line);
   background: #eaf4fc;
 }
